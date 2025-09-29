@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike - Just Do It</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="login-container" id="loginContainer">
+        <!-- Left Panel - Login Form -->
+        <div class="left-panel" id="leftPanel">
+            <div class="form-container">
+                <!-- Nike Logo -->
+                <div class="logo-section">
+                    <div class="nike-swoosh">
+                        <img src="NIKE1.png" alt="Nike Swoosh Logo" />
+                    </div>
+                </div>
+
+                <!-- Welcome Text -->
+                <div class="welcome-section" id="welcomeSection">
+                    <h1>Welcome Back, Athlete!</h1>
+                    <p>Log in to step into your Nike world.</p>
+                </div>
+
+                <!-- Login Form -->
+                <form class="login-form active" id="loginForm" action="#" method="POST">
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Email Address" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+                        <span class="password-toggle" onclick="togglePassword()">
+                            <i class="fas fa-eye" id="eye-icon"></i>
+                        </span>
+                    </div>
+                    
+                    <!-- Options Row -->
+                    <div class="form-options">
+                        <label class="remember-checkbox">
+                            <input type="checkbox" name="remember">
+                            <span class="checkmark"></span>
+                            Remember Me
+                        </label>
+                        <a href="#" class="forgot-link">Forgot Password?</a>
+                    </div>
+                    
+                    <!-- Primary Buttons -->
+                    <button type="submit" class="login-btn primary">
+                        LOG IN
+                    </button>
+                    
+                    <button type="button" class="login-btn secondary" id="signupToggle">
+                        CREATE ACCOUNT
+                    </button>
+                    
+                    <!-- Footer Note -->
+                    <div class="disclaimer">
+                        <p>By signing up you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
+                    </div>
+                </form>
+
+                <!-- Sign Up Form -->
+                <form class="signup-form" id="signupForm" action="#" method="POST">
+                    <div class="form-group">
+                        <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" id="signupEmail" name="email" placeholder="Email Address" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="password" id="signupPassword" name="password" placeholder="Password" required>
+                        <span class="password-toggle" onclick="togglePassword('signupPassword')">
+                            <i class="fas fa-eye" id="signup-eye-icon"></i>
+                        </span>
+                        <!-- Password Strength Indicator -->
+                        <div class="password-strength" id="passwordStrength">
+                            <div class="strength-bar">
+                                <div class="strength-fill" id="strengthFill"></div>
+                            </div>
+                            <div class="strength-text" id="strengthText">Password strength</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+                        <span class="password-toggle" onclick="togglePassword('confirmPassword')">
+                            <i class="fas fa-eye" id="confirm-eye-icon"></i>
+                        </span>
+                    </div>
+                    
+                    <!-- Primary Buttons -->
+                    <button type="submit" class="login-btn primary">
+                        SIGN UP
+                    </button>
+                    
+                    <button type="button" class="login-btn secondary" id="loginToggle">
+                        BACK TO LOGIN
+                    </button>
+                    
+                    <!-- Footer Note -->
+                    <div class="disclaimer">
+                        <p>By signing up you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Vertical Divider -->
+        <div class="divider"></div>
+
+        <!-- Right Panel - Nike Visual -->
+        <div class="right-panel" id="rightPanel">
+            <div class="hero-content">
+                <!-- Air Jordan Collection Section -->
+                <div class="hero-section air-jordan-section">
+                    <img src="Adobe Express - file.jpg" alt="Nike Air Max Collection" />
+                    <div class="image-overlay"></div>
+                    <div class="content-overlay">
+                        <div class="section-badge">NIKE AIR</div>
+                        <h2>Nike Air Max Collection</h2>
+                        <p>The legendary basketball legacy continues.</p>
+                        <div class="feature-list">
+                            <span class="feature">• Iconic Jumpman design</span>
+                            <span class="feature">• Premium craftsmanship</span>
+                            <span class="feature">• Basketball heritage</span>
+                        </div>
+                    </div>
+                    <div class="air-jordan-gallery">
+                        <div class="mini-shoe">
+                            <img src="Adobe Express - file.jpg" alt="Nike Air Max 1" />
+                            <span>Nike Air Max 1</span>
+                        </div>
+                        <div class="mini-shoe">
+                            <img src="Adobe Express - file (3).png" alt="Nike Air Max 4" />
+                            <span>Nike Air Max 4</span>
+                        </div>
+                        <div class="mini-shoe">
+                            <img src="Adobe Express - file.png" alt="Air Jordan 11" />
+                            <span>Nike Air Max 11</span>
+                        </div>
+                    </div>
+                </div>
+
+              
+
+    <script src="script.js"></script>
+</body>
+</html>
