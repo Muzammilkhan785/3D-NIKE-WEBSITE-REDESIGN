@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike Airmax 270 - Wear your Style with Comfort</title>
+    <link rel="stylesheet" href="nike-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container" id="home">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <img src="Adobe Express - file (5).png" alt="Nike" class="logo-image">
+                <span class="logo-subtext">OFFICIAL STORE</span>
+            </div>
+
+            <nav class="navigation">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="user-section">
+                <a href="index.html" class="login-text">Login</a>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Left Content -->
+            <div class="content-left">
+                <h1 class="just-do-it-text">JUST DO IT</h1>
+                <p class="product-name">Nike Airmax 270</p>
+                <p class="product-description">
+                    Feel the Air, Elevate Style, Step Bold with 270.
+                </p>
+            </div>
+
+            <!-- Right Content - Product Showcase -->
+            <div class="content-right">
+                <div class="product-container">
+                    <!-- Size Selection -->
+                    <div class="size-selector">
+                        <button class="size-btn" data-size="12">12</button>
+                        <button class="size-btn active" data-size="14">14</button>
+                        <button class="size-btn" data-size="16">16</button>
+                    </div>
+
+                    <!-- Product Display -->
+                    <div class="product-display">
+                        <div class="product-carousel">
+                            <div class="product-item active" data-product="1">
+                                <div class="shoe-container">
+                                    <img src="Adobe Express - file (1).png" alt="Nike Airmax 270 Red"
+                                        class="product-image nike-real-image">
+                                </div>
+                            </div>
+                            <div class="product-item" data-product="2">
+                                <div class="shoe-container">
+                                    <img src="Adobe Express - file (3).png" alt="Nike Airmax 270 Blue"
+                                        class="product-image nike-real-image">
+                                </div>
+                            </div>
+                            <div class="product-item" data-product="3">
+                                <div class="shoe-container">
+                                    <img src="Adobe Express - file.png" alt="Nike Airmax 270 Green"
+                                        class="product-image nike-real-image">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Shadow/Reflection -->
+                        <div class="product-shadow"></div>
+
+                        <!-- Ellipse Slider -->
+                        <div class="ellipse-slider">
+                            <div class="ellipse-track">
+                                <button class="ellipse-center-btn" aria-label="Navigate sneakers">&lt;&gt;</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+        <!-- Bottom Section -->
+        <div class="bottom-section">
+            <div class="product-counter">
+                <button class="counter-btn minus">−</button>
+                <span class="counter-display">01</span>
+                <button class="counter-btn plus">+</button>
+            </div>
+
+            <button class="buy-now-btn" onclick="proceedToCheckout()">
+                Buy now
+            </button>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="hero" id="about">
+        <div class="hero-bg"></div>
+        <div class="hero-content" data-reveal="scale">
+            <h1 class="main-title">Crafted for Champions</h1>
+            <p class="product-description">Every stride tells a story. Every step defines greatness. We don't just make
+                shoes—we engineer dreams.</p>
+            <a class="btn primary float" href="#contact">Get In Touch</a>
+        </div>
+    </section>
+
+    <main class="page-wrapper">
+        <!-- Vision Section -->
+        <section class="section grid grid-2">
+            <div data-reveal="fade-right">
+                <h2 class="main-title">Our Vision</h2>
+                <p class="product-description">From cushioning to contour, every silhouette we ship is tuned for comfort
+                    and designed for momentum. We believe that the perfect shoe isn't just worn—it's experienced.</p>
+                <div class="grid grid-2" style="gap: 16px; margin-top: 24px;">
+                    <div class="card" data-tilt>
+                        <h4>Innovation</h4>
+                        <p class="muted">Pushing boundaries in material science and design.</p>
+                    </div>
+                    <div class="card" data-tilt>
+                        <h4>Comfort</h4>
+                        <p class="muted">Engineering every detail for maximum performance.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card" data-tilt data-tilt-scale="1.05" data-reveal="fade-left">
+                <img src="Adobe Express - file (1).png" alt="Red Airmax Showcase" />
+                <div class="product-overlay">
+                    <h3>Airmax 270</h3>
+                    <p>Where innovation meets style</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Grid -->
+        <section class="section">
+            <h2 class="main-title" data-reveal style="text-align: center; margin-bottom: 60px;">Why Choose Nike
+            </h2>
+            <div class="grid grid-3" data-stagger>
+                <div class="card">
+                    <div class="float-slow" style="font-size: 32px; margin-bottom: 16px;">⚡</div>
+                    <h3>Lightweight Design</h3>
+                    <p class="muted">Advanced materials engineered for zero weight feel while maintaining maximum
+                        durability and support.</p>
+                </div>
+                <div class="card">
+                    <div class="float" style="font-size: 32px; margin-bottom: 16px;">🔥</div>
+                    <h3>Responsive Sole</h3>
+                    <p class="muted">Energy-return technology that gives power back to every step, turning the ground
+                        into your springboard.</p>
+                </div>
+                <div class="card">
+                    <div class="float-slow" style="font-size: 32px; margin-bottom: 16px;">💎</div>
+                    <h3>Premium Quality</h3>
+                    <p class="muted">Meticulously crafted with the finest materials, built to withstand the demands of
+                        everyday greatness.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="section">
+            <h2 class="main-title" data-reveal style="text-align: center; margin-bottom: 60px;">What Athletes Say</h2>
+            <div class="grid grid-3" data-stagger>
+                <div class="card testimonial" data-tilt>
+                    <div class="testimonial-text">"These shoes transformed my training. The comfort and responsiveness
+                        are unmatched."</div>
+                    <div class="testimonial-author">Maria Rodriguez</div>
+                    <div class="testimonial-role">Professional Runner</div>
+                </div>
+                <div class="card testimonial" data-tilt>
+                    <div class="testimonial-text">"Finally, a shoe that keeps up with my intensity. Nike delivers
+                        on every promise."</div>
+                    <div class="testimonial-author">James Chen</div>
+                    <div class="testimonial-role">Fitness Coach</div>
+                </div>
+                <div class="card testimonial" data-tilt>
+                    <div class="testimonial-text">"Style meets performance. These are the only shoes I trust for
+                        competition."</div>
+                    <div class="testimonial-author">Alex Thompson</div>
+                    <div class="testimonial-role">Track Athlete</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Showcase -->
+        <section class="section">
+            <h2 class="main-title" data-reveal style="text-align: center; margin-bottom: 60px;">Our Collection</h2>
+            <div class="grid grid-3" data-stagger>
+                <div class="product-card" data-tilt>
+                    <img src="Adobe Express - file (1).png" alt="Red Airmax" />
+                    <div class="product-overlay">
+                        <h3>Fire Red</h3>
+                        <p>Bold. Powerful. Unstoppable.</p>
+                    </div>
+                </div>
+                <div class="product-card" data-tilt>
+                    <img src="Adobe Express - file (3).png" alt="Blue Airmax" />
+                    <div class="product-overlay">
+                        <h3>Ocean Blue</h3>
+                        <p>Deep. Calm. Focused.</p>
+                    </div>
+                </div>
+                <div class="product-card" data-tilt>
+                    <img src="Adobe Express - file.png" alt="Green Airmax" />
+                    <div class="product-overlay">
+                        <h3>Forest Green</h3>
+                        <p>Natural. Fresh. Dynamic.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Contact Section -->
+    <section class="hero" id="contact">
+        <h1>Get In Touch</h1>
+        <p>Have questions? Need sizing advice? Our team of experts is here to help you find your perfect fit.</p>
+    </section>
+
+    <main class="page-wrapper">
+        <!-- Contact Form & Info -->
+        <section class="section grid grid-2">
+            <div>
+                <h2 class="main-title">Send us a Message</h2>
+                <p class="product-description">Whether you're looking for product recommendations or need support, we're
+                    here to help.</p>
+
+                <div class="card">
+                    <form class="grid contact-form" style="gap: 20px;" id="contactForm">
+                        <div class="grid grid-2">
+                            <input type="text" name="firstName" placeholder="First Name" required />
+                            <input type="text" name="lastName" placeholder="Last Name" required />
+                        </div>
+                        <input type="email" name="email" placeholder="Email Address" required />
+                        <input type="tel" name="phone" placeholder="Phone Number (Optional)" />
+                        <select name="helpType" required>
+                            <option value="">How can we help?</option>
+                            <option value="sizing">Sizing Advice</option>
+                            <option value="product">Product Information</option>
+                            <option value="order">Order Support</option>
+                            <option value="returns">Returns & Exchanges</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <textarea name="message" rows="5" placeholder="Tell us more about how we can help you..."
+                            required></textarea>
+                        <button class="btn contact-submit-btn" type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+
+            <div>
+                <div class="product-card card">
+                    <img src="Adobe Express - file (3).png" alt="Blue Airmax Contact" />
+                    <div class="product-overlay">
+                        <h3>Expert Guidance</h3>
+                        <p>Our team knows every detail</p>
+                    </div>
+                </div>
+
+                <div class="grid" style="gap: 16px; margin-top: 32px;">
+                    <div class="card">
+                        <h4>📞 Quick Response</h4>
+                        <p class="muted">We typically respond within 2 hours during business hours.</p>
+                    </div>
+                    <div class="card">
+                        <h4>🌐 Global Support</h4>
+                        <p class="muted">Available in multiple languages and time zones.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Methods -->
+        <section class="section">
+            <h2 class="main-title" style="text-align: center; margin-bottom: 60px;">Multiple Ways to Connect</h2>
+            <div class="grid grid-4">
+                <div class="card" style="text-align: center;">
+                    <div class="icon-container">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Live Chat</h3>
+                    <p class="muted" style="margin-bottom: 16px;">Instant help when you need it most</p>
+                    <a class="btn btn-secondary" href="#">Start Chat</a>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div class="icon-container">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Phone Support</h3>
+                    <p class="muted" style="margin-bottom: 16px;">Speak directly with our experts</p>
+                    <a class="btn btn-secondary" href="tel:+1-800-NIKE">Call Us</a>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div class="icon-container">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p class="muted" style="margin-bottom: 16px;">Detailed responses to complex questions</p>
+                    <a class="btn btn-secondary" href="mailto:support@nike.com">Email Us</a>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div class="icon-container">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Store Locator</h3>
+                    <p class="muted" style="margin-bottom: 16px;">Try before you buy at retail partners</p>
+                    <a class="btn btn-secondary" href="#">Find Stores</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section">
+            <h2 class="main-title" style="text-align: center; margin-bottom: 60px;">Frequently Asked Questions</h2>
+            <div class="grid grid-2">
+                <div class="card">
+                    <h4 style="margin-bottom: 16px;">What's your return policy?</h4>
+                    <p class="muted">We offer a 30-day return window for unworn items. Elite tier customers get 60 days
+                        plus free return shipping.</p>
+                </div>
+                <div class="card">
+                    <h4 style="margin-bottom: 16px;">How do I find my size?</h4>
+                    <p class="muted">Use our interactive size guide or book a virtual fitting session with our experts
+                        for personalized recommendations.</p>
+                </div>
+                <div class="card">
+                    <h4 style="margin-bottom: 16px;">Do you offer custom designs?</h4>
+                    <p class="muted">Yes! Elite tier customers can access our custom design studio for personalized
+                        colorways and engraving options.</p>
+                </div>
+                <div class="card">
+                    <h4 style="margin-bottom: 16px;">What about international shipping?</h4>
+                    <p class="muted">We ship worldwide with tracking. Delivery times vary by location, typically 5-14
+                        business days internationally.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo">
+                    <img src="Adobe Express - file (5).png" alt="Nike" class="logo-image">
+                    <span class="logo-subtext">OFFICIAL STORE</span>
+                    <p class="muted">Engineering excellence in every step. Trusted by athletes worldwide.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com" class="social-link" target="_blank" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                        <a href="https://instagram.com" class="social-link" target="_blank" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com" class="social-link" target="_blank" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                            </svg>
+                        </a>
+                        <a href="https://youtube.com" class="social-link" target="_blank" aria-label="YouTube">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="#home">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <div class="footer-links">
+                        <a href="#">Help Center</a>
+                        <a href="#">Returns</a>
+                        <a href="#">Shipping Info</a>
+                        <a href="#">Warranty</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p class="muted">support@nike.com</p>
+                    <p class="muted">1-234-56789</p>
+                    <p class="muted">Mon-Fri 9AM-6PM EST</p>
+                </div>
+            </div>
+    </footer>
+
+    <script src="nike-script.js"></script>
+    <script src="site.js"></script>
+</body>
+
+</html>

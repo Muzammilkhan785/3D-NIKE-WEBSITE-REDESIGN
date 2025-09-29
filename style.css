@@ -1,0 +1,1060 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+/* Main Container */
+.login-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-container.signup-mode {
+    position: relative;
+}
+
+.login-container.signup-mode .left-panel {
+    transform: translateX(100%);
+    z-index: 5;
+}
+
+.login-container.signup-mode .right-panel {
+    transform: translateX(-100%);
+    z-index: 10;
+}
+
+/* Left Panel - Login Form */
+.left-panel {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    position: relative;
+    z-index: 5;
+    min-width: 50%;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-container {
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    height: auto;
+}
+
+/* Nike Logo */
+.logo-section {
+    margin-bottom: -10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: -30px; /* subtle left shift in px */
+    position: relative;
+    z-index: 30;
+}
+
+.nike-swoosh {
+    width: 150px;
+    height: 150px;
+    color: #111111;
+    margin: 10px;
+}
+
+.nike-swoosh svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Ensure raster logo image scales and centers */
+.nike-swoosh img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* Welcome Section */
+.welcome-section {
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 30;
+}
+
+.welcome-section h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
+.welcome-section p {
+    font-size: 16px;
+    color: #757575;
+    font-weight: 400;
+}
+
+/* Form Styles */
+.login-form,
+.signup-form {
+    width: 100%;
+}
+
+.login-form {
+    display: block;
+}
+
+.signup-form {
+    display: none;
+}
+
+.signup-form.active {
+    display: block;
+}
+
+.login-form:not(.active) {
+    display: none;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+    width: 100%;
+}
+
+.form-group input {
+    width: 100%;
+    height: 56px;
+    padding: 0 20px;
+    border: 2px solid #e5e5e5;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #b91c1c;
+    box-shadow: 0 0 0 2px rgba(185, 28, 28, 0.1);
+}
+
+.form-group input::placeholder {
+    color: #757575;
+    font-weight: 400;
+}
+
+/* Password Toggle */
+.password-toggle {
+    position: absolute;
+    right: 20px;
+    top: 28px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #757575;
+    transition: color 0.3s ease;
+    z-index: 10;
+}
+
+.password-toggle:hover {
+    color: #b91c1c;
+}
+
+/* Password Strength Checker */
+.password-strength {
+    margin-top: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    transform: translateY(-10px);
+}
+
+.password-strength.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.strength-bar {
+    width: 100%;
+    height: 4px;
+    background: #e5e5e5;
+    border-radius: 2px;
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+
+.strength-fill {
+    height: 100%;
+    width: 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.strength-fill.weak {
+    width: 25%;
+    background: linear-gradient(90deg, #ef4444, #f87171);
+}
+
+.strength-fill.fair {
+    width: 50%;
+    background: linear-gradient(90deg, #f59e0b, #fbbf24);
+}
+
+.strength-fill.good {
+    width: 75%;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+}
+
+.strength-fill.strong {
+    width: 100%;
+    background: linear-gradient(90deg, #10b981, #34d399);
+}
+
+.strength-text {
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+}
+
+.strength-text.weak {
+    color: #ef4444;
+}
+
+.strength-text.fair {
+    color: #f59e0b;
+}
+
+.strength-text.good {
+    color: #3b82f6;
+}
+
+.strength-text.strong {
+    color: #10b981;
+}
+
+/* Form Options Row */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+.remember-checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: #757575;
+    font-weight: 400;
+}
+
+.remember-checkbox input {
+    display: none;
+}
+
+.checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #e5e5e5;
+    border-radius: 4px;
+    margin-right: 10px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.remember-checkbox input:checked + .checkmark {
+    background: linear-gradient(135deg, #b91c1c 0%, #dc2626 50%, #ef4444 100%);
+    border-color: #b91c1c;
+}
+
+.remember-checkbox input:checked + .checkmark::after {
+    content: '✓';
+    position: absolute;
+    top: -2px;
+    left: 3px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.forgot-link {
+    color: #dc2626;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.forgot-link:hover {
+    color: #b91c1c;
+}
+
+/* Primary Buttons */
+.login-btn {
+    width: 100%;
+    height: 56px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 16px;
+    border: none;
+    letter-spacing: 1px;
+}
+
+.login-btn.primary {
+    background: linear-gradient(135deg, #b91c1c 0%, #dc2626 50%, #ef4444 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(185, 28, 28, 0.25);
+}
+
+.login-btn.primary:hover {
+    background: linear-gradient(135deg, #991b1b 0%, #b91c1c 50%, #dc2626 100%);
+    box-shadow: 0 6px 20px rgba(185, 28, 28, 0.35);
+    transform: translateY(-2px);
+}
+
+.login-btn.secondary {
+    background: transparent;
+    color: #111111;
+    border: 2px solid #111111;
+}
+
+.login-btn.secondary:hover {
+    background: #111111;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* Footer Disclaimer */
+.disclaimer {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.disclaimer p {
+    font-size: 12px;
+    color: #cccccc;
+    line-height: 1.4;
+}
+
+.disclaimer a {
+    color: #757575;
+    text-decoration: none;
+}
+
+.disclaimer a:hover {
+    color: #b91c1c;
+    text-decoration: underline;
+}
+
+/* Vertical Divider */
+.divider {
+    width: 1px;
+    background: #e5e5e5;
+    height: 100vh;
+}
+
+/* Right Panel - Hero Image */
+.right-panel {
+    flex: 1;
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    z-index: 5;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom Scrollbar */
+.right-panel::-webkit-scrollbar {
+    width: 6px;
+}
+
+.right-panel::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.right-panel::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+}
+
+.right-panel::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    min-height: 100vh;
+}
+
+.hero-section {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(185, 28, 28, 0.4) 0%,
+        rgba(0, 0, 0, 0.3) 30%,
+        rgba(220, 38, 38, 0.5) 70%,
+        rgba(0, 0, 0, 0.6) 100%
+    );
+}
+
+.content-overlay {
+    position: absolute;
+    bottom: 80px;
+    left: 40px;
+    z-index: 10;
+    color: white;
+}
+
+.content-overlay h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.content-overlay p {
+    font-size: 16px;
+    font-weight: 400;
+    opacity: 0.9;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+/* Section Badges */
+.section-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #b91c1c 0%, #dc2626 50%, #ef4444 100%);
+    color: rgba(255, 255, 255, 0.98);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(185, 28, 28, 0.3);
+}
+
+/* Feature Lists */
+.feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.feature {
+    font-size: 14px;
+    font-weight: 400;
+    opacity: 0.85;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Air Jordan Gallery */
+.air-jordan-gallery {
+    position: absolute;
+    top: 60px;
+    right: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 15;
+}
+
+/* Explore Section - Clean & Modern Design */
+.explore-section {
+    min-height: 100vh;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+    padding: 40px 0;
+}
+
+.explore-section:hover {
+    background: #f8f9fa;
+}
+
+.explore-content {
+    text-align: center;
+    padding: 40px;
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+}
+
+.explore-header {
+    margin-bottom: 40px;
+}
+
+.explore-title {
+    font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: #111111;
+    margin: 0 0 20px 0;
+    letter-spacing: -1px;
+}
+
+.explore-subtitle {
+    font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 1.3rem;
+    color: #666666;
+    margin: 0;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Shoe Gallery */
+.shoe-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.shoe-item {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    width: 220px;
+    position: relative;
+}
+
+.shoe-item:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 10px 30px rgba(220, 38, 38, 0.15);
+    border-color: rgba(220, 38, 38, 0.2);
+}
+
+.shoe-item img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.shoe-item:hover img {
+    transform: scale(1.08);
+}
+
+/* Explore Button */
+.explore-action {
+    margin-top: 30px;
+}
+
+.explore-btn {
+    font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    display: inline-block;
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+    color: #ffffff;
+    padding: 18px 36px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.25);
+}
+
+.explore-btn:hover {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 8px 25px rgba(220, 38, 38, 0.35);
+}
+
+.mini-shoe {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 12px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    width: 120px;
+}
+
+.mini-shoe:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 40px rgba(185, 28, 28, 0.2);
+}
+
+.mini-shoe img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    transition: transform 0.3s ease;
+}
+
+.mini-shoe:hover img {
+    transform: scale(1.1);
+}
+
+.mini-shoe span {
+    font-size: 11px;
+    font-weight: 600;
+    color: #111111;
+    display: block;
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Specific Section Styling */
+.air-max-section .content-overlay {
+    background: linear-gradient(135deg, rgba(185, 28, 28, 0.9) 0%, rgba(0, 0, 0, 0.7) 100%);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dunk-section .content-overlay {
+    background: linear-gradient(135deg, rgba(220, 38, 38, 0.9) 0%, rgba(0, 0, 0, 0.7) 100%);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(135deg, #111111 0%, #b91c1c 50%, #dc2626 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cta-content {
+    text-align: center;
+    color: white;
+    padding: 40px;
+}
+
+.nike-swoosh-large {
+    width: 120px;
+    height: 70px;
+    margin: 0 auto 30px;
+    color: rgba(255, 255, 255, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: pulse 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+}
+
+.nike-swoosh-large svg {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.8; }
+}
+
+.cta-content h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.cta-content p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Action Button */
+.action-button {
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+}
+
+.shop-now-btn {
+    background: linear-gradient(135deg, #b91c1c 0%, #dc2626 50%, #ef4444 100%);
+    color: rgba(255, 255, 255, 0.98);
+    border: none;
+    padding: 18px 36px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(185, 28, 28, 0.4);
+    letter-spacing: 1px;
+    backdrop-filter: blur(10px);
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.shop-now-btn:hover {
+    background: linear-gradient(135deg, #991b1b 0%, #b91c1c 50%, #dc2626 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(185, 28, 28, 0.5);
+}
+
+.swoosh-icon {
+    width: 20px;
+    height: 12px;
+    color: rgba(255, 255, 255, 0.98);
+}
+
+.swoosh-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+    }
+    
+    .left-panel {
+        flex: none;
+        height: 100vh;
+        overflow-y: auto;
+        padding: 30px 20px;
+    }
+    
+    .right-panel {
+        display: none;
+    }
+    
+    .divider {
+        display: none;
+    }
+    
+    .welcome-section h1 {
+        font-size: 28px;
+    }
+    
+    .form-container {
+        max-width: none;
+    }
+
+    /* Disable panel sliding on mobile */
+    .login-container.signup-mode {
+        transform: none;
+    }
+
+    .login-container.signup-mode .left-panel {
+        transform: none;
+    }
+
+    .login-container.signup-mode .right-panel {
+        transform: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .left-panel {
+        padding: 20px 15px;
+    }
+    
+    .logo-section {
+        margin-bottom: 40px;
+    }
+    
+    .nike-swoosh {
+        width: 45px;
+        height: 26px;
+    }
+    
+    .welcome-section {
+        margin-bottom: 30px;
+    }
+    
+    .welcome-section h1 {
+        font-size: 24px;
+    }
+    
+    .welcome-section p {
+        font-size: 14px;
+    }
+    
+    .form-group input {
+        height: 50px;
+        font-size: 14px;
+    }
+    
+    .login-btn {
+        height: 50px;
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 769px) {
+    /* Desktop specific styles for scrollable right panel */
+    .content-overlay {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease;
+    }
+    
+    .hero-section:hover .content-overlay {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .air-jordan-gallery {
+        opacity: 0;
+        transform: translateX(30px);
+        transition: all 0.6s ease 0.2s;
+    }
+    
+    .air-jordan-section:hover .air-jordan-gallery {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+    .hero-section {
+        transition: all 0.3s ease;
+    }
+    
+    .hero-section:hover {
+        transform: scale(1.02);
+    }
+    
+    .hero-section:hover .image-overlay {
+        background: linear-gradient(
+            135deg,
+            rgba(185, 28, 28, 0.6) 0%,
+            rgba(0, 0, 0, 0.4) 30%,
+            rgba(220, 38, 38, 0.7) 70%,
+            rgba(0, 0, 0, 0.7) 100%
+        );
+    }
+}
+
+@media (max-width: 768px) {
+    .air-jordan-gallery {
+        position: static;
+        flex-direction: row;
+        margin-top: 20px;
+        justify-content: center;
+        opacity: 1;
+        transform: none;
+    }
+    
+    .mini-shoe {
+        width: 90px;
+        padding: 8px;
+    }
+    
+    .mini-shoe img {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .mini-shoe span {
+        font-size: 10px;
+    }
+    
+    .content-overlay {
+        position: static;
+        background: linear-gradient(135deg, rgba(185, 28, 28, 0.95) 0%, rgba(0, 0, 0, 0.8) 100%);
+        padding: 20px;
+        margin: 20px;
+        border-radius: 12px;
+        opacity: 1;
+        transform: none;
+    }
+    
+    .section-badge {
+        font-size: 10px;
+        padding: 4px 12px;
+    }
+    
+    .feature-list {
+        margin-top: 10px;
+    }
+    
+    .feature {
+        font-size: 12px;
+    }
+    
+    .explore-section {
+        padding: 20px 0;
+        min-height: 100vh;
+    }
+    
+    .explore-content {
+        padding: 30px 20px;
+        min-height: 90vh;
+        justify-content: center;
+    }
+    
+    .explore-title {
+        font-size: 2.8rem;
+        margin-bottom: 15px;
+        letter-spacing: -0.5px;
+    }
+    
+    .explore-subtitle {
+        font-size: 1.1rem;
+        padding: 0 15px;
+        margin-bottom: 10px;
+    }
+    
+    .explore-header {
+        margin-bottom: 30px;
+    }
+    
+    .shoe-gallery {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        margin: 30px 0;
+    }
+    
+    .shoe-item {
+        width: 280px;
+        max-width: 90vw;
+    }
+    
+    .shoe-item img {
+        height: 140px;
+    }
+    
+    .explore-btn {
+        padding: 16px 32px;
+        font-size: 15px;
+    }
+    
+    .explore-action {
+        margin-top: 25px;
+    }
+}
+
+/* Focus Accent Colors */
+.form-group input:focus {
+    border-color: #111111;
+    box-shadow: 0 0 0 2px rgba(17, 17, 17, 0.1);
+}
+
+/* Nike Red Accent Option */
+.nike-red-accent .form-group input:focus {
+    border-color: #e41e26;
+    box-shadow: 0 0 0 2px rgba(228, 30, 38, 0.1);
+}
+
+/* Volt Green Accent Option */
+.nike-volt-accent .form-group input:focus {
+    border-color: #ccff00;
+    box-shadow: 0 0 0 2px rgba(204, 255, 0, 0.2);
+}
+
+/* Loading Animation */
+.login-btn.loading {
+    pointer-events: none;
+    opacity: 0.8;
+    position: relative;
+}
+
+.login-btn.loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Hover Animations */
+.form-group {
+    transition: transform 0.2s ease;
+}
+
+.form-group:hover {
+    transform: translateY(-1px);
+}
+
+.nike-swoosh {
+    transition: transform 0.3s ease;
+}
+
+.nike-swoosh:hover {
+    transform: scale(1.1);
+}
+
+/* Active States */
+.login-btn:active {
+    transform: translateY(1px);
+}
+
+.shop-now-btn:active {
+    transform: scale(1.05);
+}

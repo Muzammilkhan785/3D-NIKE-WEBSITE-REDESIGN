@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike Web Development Lab Manual</title>
+    <style>
+        @media print {
+            @page {
+                size: A4;
+                margin: 1in;
+            }
+            
+            .no-print {
+                display: none;
+            }
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            border-bottom: 3px solid #dc2626;
+        }
+        
+        .header h1 {
+            color: #dc2626;
+            font-size: 2.5em;
+            font-weight: bold;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .header .subtitle {
+            color: #666;
+            font-size: 1.2em;
+            margin-top: 10px;
+            font-style: italic;
+        }
+        
+        .overview {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 5px solid #dc2626;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(220, 38, 38, 0.1);
+        }
+        
+        .overview strong {
+            color: #dc2626;
+        }
+        
+        .toc {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 20px 0;
+            border: 2px solid #dc2626;
+            border-radius: 5px;
+        }
+        
+        .toc h2 {
+            color: #dc2626;
+            text-align: center;
+            font-size: 1.8em;
+            margin-top: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .toc ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .toc li {
+            padding: 8px 0;
+            border-bottom: 1px dotted #ccc;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .toc li:last-child {
+            border-bottom: none;
+        }
+        
+        .toc .chapter {
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .toc .page {
+            color: #666;
+            font-weight: bold;
+        }
+        
+        .section-header {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: white;
+            padding: 15px 20px;
+            margin: 30px 0 20px 0;
+            border-radius: 5px;
+            font-size: 1.8em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+        }
+        
+        .subsection-header {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: white;
+            padding: 12px 20px;
+            margin: 20px 0 15px 0;
+            border-radius: 5px;
+            font-size: 1.4em;
+            font-weight: bold;
+            box-shadow: 0 3px 10px rgba(37, 99, 235, 0.3);
+        }
+        
+        .feature-box {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-left: 5px solid #22c55e;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .feature-box.red {
+            border-left-color: #ef4444;
+        }
+        
+        .feature-box.blue {
+            border-left-color: #2563eb;
+        }
+        
+        .feature-box.yellow {
+            border-left-color: #ffc107;
+        }
+        
+        .feature-box h3 {
+            color: #22c55e;
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        
+        .feature-box.red h3 {
+            color: #ef4444;
+        }
+        
+        .feature-box.blue h3 {
+            color: #2563eb;
+        }
+        
+        .feature-box.yellow h3 {
+            color: #ffc107;
+        }
+        
+        .feature-box ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        
+        .feature-box li {
+            margin: 5px 0;
+        }
+        
+        .feature-box strong {
+            color: #333;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: white;
+            padding: 15px 12px;
+            text-align: left;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        tr:hover {
+            background-color: #e3f2fd;
+        }
+        
+        .product-red {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: white;
+            font-weight: bold;
+        }
+        
+        .product-blue {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: white;
+            font-weight: bold;
+        }
+        
+        .product-green {
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: white;
+            font-weight: bold;
+        }
+        
+        .code-block {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .conclusion {
+            background: linear-gradient(135deg, #ffc107, #ff8f00);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 5px;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
+        }
+        
+        .achievements {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-left: 5px solid #22c55e;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .achievements h3 {
+            color: #22c55e;
+            font-size: 1.3em;
+            margin-top: 0;
+        }
+        
+        .achievements ul {
+            padding-left: 20px;
+        }
+        
+        .achievements li {
+            margin: 8px 0;
+            color: #333;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 2px solid #dc2626;
+            color: #666;
+        }
+        
+        .footer h3 {
+            color: #dc2626;
+            margin: 0;
+        }
+        
+        .footer p {
+            margin: 5px 0;
+        }
+        
+        .page-break {
+            page-break-before: always;
+        }
+        
+        .no-print {
+            background: #007acc;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .no-print button {
+            background: white;
+            color: #007acc;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 3px;
+            margin: 0 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .no-print button:hover {
+            background: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="no-print">
+        <p>This document is ready for printing or saving as PDF/Word format</p>
+        <button onclick="window.print()">Print / Save as PDF</button>
+        <button onclick="saveAsWord()">Save as Word Document</button>
+    </div>
+
+    <div class="header">
+        <h1>Nike E-Commerce Web Development</h1>
+        <p class="subtitle">Complete Laboratory Manual & Technical Documentation</p>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #dc2626, #b91c1c); color: white; padding: 20px; margin: 20px 0; border-radius: 10px; box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);">
+        <div style="text-align: center; margin-bottom: 15px;">
+            <h2 style="margin: 0; font-size: 1.5em; text-transform: uppercase; letter-spacing: 1px;">Project Team</h2>
+        </div>
+        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
+            <div style="flex: 1; min-width: 200px;">
+                <h3 style="color: #ffc107; margin: 0 0 10px 0; font-size: 1.2em; border-bottom: 2px solid #ffc107; padding-bottom: 5px;">Project Leader</h3>
+                <p style="margin: 0; font-size: 1.1em; font-weight: bold;">MUZAMMIL KHAN</p>
+            </div>
+            <div style="flex: 2; min-width: 300px;">
+                <h3 style="color: #ffc107; margin: 0 0 10px 0; font-size: 1.2em; border-bottom: 2px solid #ffc107; padding-bottom: 5px;">Project Participants</h3>
+                <ul style="margin: 0; padding-left: 20px; list-style-type: none;">
+                    <li style="margin: 5px 0; font-size: 1em; font-weight: bold; position: relative; padding-left: 20px;">
+                        <span style="position: absolute; left: 0; color: #ffc107;">▶</span> MANAHYA BATOOL
+                    </li>
+                    <li style="margin: 5px 0; font-size: 1em; font-weight: bold; position: relative; padding-left: 20px;">
+                        <span style="position: absolute; left: 0; color: #ffc107;">▶</span> USAMA ALI MINHAS
+                    </li>
+                    <li style="margin: 5px 0; font-size: 1em; font-weight: bold; position: relative; padding-left: 20px;">
+                        <span style="position: absolute; left: 0; color: #ffc107;">▶</span> RABIYA SIDDIQUE
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="overview">
+        <p><strong>Project Overview:</strong> Comprehensive Nike e-commerce website featuring product showcase, user authentication, and secure checkout system</p>
+        <p><strong>Technologies:</strong> HTML5, CSS3, JavaScript ES6, Responsive Design, Progressive Web Features</p>
+        <p><strong>Pages:</strong> 4 main pages with advanced interactivity and animations</p>
+        <p><strong>Complexity Level:</strong> Advanced (Professional-grade implementation)</p>
+    </div>
+
+    <div class="toc">
+        <h2>Table of Contents</h2>
+        <ul>
+            <li><span class="chapter">1. Project Architecture & File Structure</span> <span class="page">Page 3</span></li>
+            <li><span class="chapter">2. Login & Authentication System</span> <span class="page">Page 4</span></li>
+            <li><span class="chapter">3. Product Showcase & Interactive Features</span> <span class="page">Page 6</span></li>
+            <li><span class="chapter">4. Checkout & Payment Processing</span> <span class="page">Page 8</span></li>
+            <li><span class="chapter">5. Styling & Visual Design System</span> <span class="page">Page 10</span></li>
+        </ul>
+    </div>
+
+    <div class="page-break"></div>
+
+    <div class="section-header">1. Project Architecture & File Structure</div>
+
+    <p>The Nike e-commerce website is built using a modular architecture with clear separation of concerns. The project consists of four main pages, each with dedicated HTML, CSS, and JavaScript files.</p>
+
+    <div class="subsection-header">1.1 File Organization</div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>File Name</th>
+                <th>Type</th>
+                <th>Purpose</th>
+                <th>Key Features</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>index.html</strong></td>
+                <td>Login Page</td>
+                <td>User authentication entry point</td>
+                <td>Dual-form system, password validation</td>
+            </tr>
+            <tr>
+                <td><strong>nike-showcase.html</strong></td>
+                <td>Product Page</td>
+                <td>Main product display and shopping</td>
+                <td>Interactive carousel, size selection</td>
+            </tr>
+            <tr>
+                <td><strong>checkout.html</strong></td>
+                <td>Purchase Page</td>
+                <td>Payment and shipping forms</td>
+                <td>Form validation, payment processing</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="feature-box">
+        <h3>Modern Web Standards:</h3>
+        <p>The project follows contemporary web development practices including semantic HTML5, CSS Grid/Flexbox layouts, ES6 JavaScript features, and progressive enhancement principles.</p>
+    </div>
+
+    <div class="feature-box blue">
+        <h3>User Experience Focus:</h3>
+        <p>Every interaction is designed with user experience in mind, featuring smooth animations, intuitive navigation, clear feedback, and accessibility considerations.</p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <div class="section-header">2. Login & Authentication System</div>
+
+    <div class="feature-box red">
+        <h3>Login Form Features:</h3>
+        <ul>
+            <li><strong>Email Validation:</strong> Real-time email format checking with visual feedback</li>
+            <li><strong>Password Toggle:</strong> Show/hide password functionality with eye icon</li>
+            <li><strong>Remember Me:</strong> Persistent login state with localStorage integration</li>
+            <li><strong>Form Persistence:</strong> Auto-save and restore form data</li>
+        </ul>
+    </div>
+
+    <div class="feature-box red">
+        <h3>Signup Form Features:</h3>
+        <ul>
+            <li><strong>Password Strength Meter:</strong> Real-time password strength analysis</li>
+            <li><strong>Confirmation Matching:</strong> Password confirmation validation</li>
+            <li><strong>Progressive Validation:</strong> Field-by-field validation feedback</li>
+            <li><strong>Animated Transitions:</strong> Smooth form switching animations</li>
+        </ul>
+    </div>
+
+    <p><strong style="color: #dc2626; font-size: 1.2em;">Password Strength Validation Example:</strong></p>
+
+    <div class="code-block">
+function checkPasswordStrength() {
+    const password = signupPasswordInput.value;
+    const hasLength = password.length >= 8;
+    const hasUppercase = /[A-Z]/.test(password);
+    const hasLowercase = /[a-z]/.test(password);
+    const hasNumbers = /\d/.test(password);
+    const hasSpecial = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password);
+    
+    let strength = 0;
+    if (hasLength) strength++;
+    if (hasUppercase) strength++;
+    if (hasLowercase) strength++;
+    if (hasNumbers) strength++;
+    if (hasSpecial) strength++;
+    
+    // Visual feedback based on strength level
+    updateStrengthIndicator(strength);
+}
+    </div>
+
+    <div class="page-break"></div>
+
+    <div class="section-header">3. Product Showcase & Interactive Features</div>
+
+    <div class="feature-box">
+        <h3>Interactive Product Display:</h3>
+        <ul>
+            <li><strong>3D Product Carousel:</strong> Rotating display with 3 Nike Airmax 270 variants</li>
+            <li><strong>Auto-Rotation:</strong> 4-second interval automatic slide progression</li>
+            <li><strong>Manual Navigation:</strong> Click controls, keyboard arrows, swipe gestures</li>
+            <li><strong>Dynamic Backgrounds:</strong> Color-matched gradients for each product</li>
+        </ul>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Product Variant</th>
+                <th>Color Scheme</th>
+                <th>Background Gradient</th>
+                <th>Price Range</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="product-red">Fire Red</td>
+                <td>Red-based palette</td>
+                <td>#b91c1c → #dc2626 → #ef4444</td>
+                <td>$130 - $150</td>
+            </tr>
+            <tr>
+                <td class="product-blue">Ocean Blue</td>
+                <td>Blue-based palette</td>
+                <td>#1e40af → #2563eb → #3b82f6</td>
+                <td>$130 - $150</td>
+            </tr>
+            <tr>
+                <td class="product-green">Forest Green</td>
+                <td>Green-based palette</td>
+                <td>#16a34a → #22c55e → #4ade80</td>
+                <td>$130 - $150</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="feature-box">
+        <h3>Shopping Features:</h3>
+        <ul>
+            <li><strong>Size Selection:</strong> Interactive size buttons (7, 8, 9, 10, 11, 12)</li>
+            <li><strong>Quantity Control:</strong> Increment/decrement buttons with input validation</li>
+            <li><strong>Add to Cart:</strong> Animated feedback with cart integration</li>
+            <li><strong>Wishlist Integration:</strong> Heart icon toggle with local storage</li>
+        </ul>
+    </div>
+
+    <div class="page-break"></div>
+
+    <div class="section-header">4. Checkout & Payment Processing</div>
+
+    <div class="feature-box yellow">
+        <h3>Shipping Information Form:</h3>
+        <ul>
+            <li>Personal Details: First name, last name, email, phone number</li>
+            <li>Address Fields: Street address, city, state, ZIP code</li>
+            <li>Shipping Options: Standard (Free), Express ($9.99), Overnight ($24.99)</li>
+            <li>Real-time Updates: Cost calculations based on shipping selection</li>
+        </ul>
+    </div>
+
+    <div class="feature-box">
+        <h3>Payment Processing System:</h3>
+        <ul>
+            <li>Payment Methods: Credit/Debit cards, PayPal, Apple Pay</li>
+            <li>Card Validation: Real-time format checking and type detection</li>
+            <li>Security Features: CVV validation, expiry date formatting</li>
+            <li>Visual Indicators: Card type icons (Visa, Mastercard, Amex)</li>
+        </ul>
+    </div>
+
+    <div class="feature-box blue">
+        <h3>Order Summary Features:</h3>
+        <ul>
+            <li><strong>Dynamic Calculations:</strong> Subtotal, tax, shipping, and total updates</li>
+            <li><strong>Promo Code System:</strong> Discount code validation and application</li>
+            <li><strong>Order Review:</strong> Complete order breakdown before purchase</li>
+            <li><strong>Secure Processing:</strong> HTTPS validation and secure form handling</li>
+        </ul>
+    </div>
+
+    <div class="code-block">
+// Payment form validation example
+function validatePaymentForm() {
+    const cardNumber = document.getElementById('cardNumber').value;
+    const cvv = document.getElementById('cvv').value;
+    const expiryDate = document.getElementById('expiryDate').value;
+    
+    // Card number validation (Luhn algorithm)
+    const isValidCard = validateCardNumber(cardNumber);
+    
+    // CVV validation based on card type
+    const isValidCVV = validateCVV(cvv, getCardType(cardNumber));
+    
+    // Expiry date validation
+    const isValidExpiry = validateExpiryDate(expiryDate);
+    
+    return isValidCard && isValidCVV && isValidExpiry;
+}
+    </div>
+
+    <div class="page-break"></div>
+
+    <div class="section-header">5. Styling & Visual Design System</div>
+
+    <div class="feature-box">
+        <h3>CSS Architecture:</h3>
+        <ul>
+            <li><strong>Glassmorphism Effects:</strong> Modern frosted glass appearance with backdrop filters</li>
+            <li><strong>CSS Grid Layout:</strong> Responsive grid systems for product displays</li>
+            <li><strong>Flexbox Navigation:</strong> Flexible and responsive navigation components</li>
+            <li><strong>Custom Properties:</strong> CSS variables for consistent theming</li>
+        </ul>
+    </div>
+
+    <div class="feature-box blue">
+        <h3>Animation System:</h3>
+        <ul>
+            <li><strong>Transform Animations:</strong> Smooth scaling, rotation, and translation effects</li>
+            <li><strong>Opacity Transitions:</strong> Fade-in/fade-out effects for content loading</li>
+            <li><strong>Keyframe Animations:</strong> Complex animation sequences for carousels</li>
+            <li><strong>Hardware Acceleration:</strong> GPU-optimized animations using transform3d</li>
+        </ul>
+    </div>
+
+    <div class="feature-box red">
+        <h3>Responsive Design:</h3>
+        <ul>
+            <li><strong>Mobile-First Approach:</strong> Designed for mobile, enhanced for desktop</li>
+            <li><strong>Breakpoint System:</strong> 320px, 768px, 1024px, 1440px breakpoints</li>
+            <li><strong>Flexible Typography:</strong> Responsive font sizing using clamp()</li>
+            <li><strong>Touch Interactions:</strong> Optimized for touch devices and gestures</li>
+        </ul>
+    </div>
+
+    <div class="conclusion">Conclusion</div>
+
+    <div class="achievements">
+        <h3>Key Achievements:</h3>
+        <ul>
+            <li>Sophisticated authentication system with dual forms and advanced validation</li>
+            <li>Interactive product showcase with carousel functionality and dynamic backgrounds</li>
+            <li>Complete checkout system with payment processing and real-time calculations</li>
+            <li>Modern styling using glassmorphism, CSS Grid, and smooth animations</li>
+            <li>Mobile-first responsive design with touch gesture support</li>
+            <li>Performance-optimized code with hardware acceleration and lazy loading</li>
+            <li>Accessibility features including ARIA labels and keyboard navigation</li>
+            <li>Progressive Web App capabilities with offline functionality</li>
+        </ul>
+    </div>
+
+    <p>This Nike E-Commerce Web Development project represents a comprehensive implementation of modern web technologies and best practices. The combination of advanced CSS techniques, interactive JavaScript functionality, responsive design, and attention to user experience creates a professional-grade e-commerce solution suitable for real-world deployment.</p>
+
+    <div class="footer">
+        <h3>Nike E-Commerce Web Development Laboratory Manual</h3>
+        <p>Complete Technical Documentation | Advanced Web Development Project</p>
+        <p>© 2025 | Professional Web Development Training Material</p>
+    </div>
+
+    <script>
+        function saveAsWord() {
+            // Remove the no-print div for the Word document
+            const noPrintDiv = document.querySelector('.no-print');
+            if (noPrintDiv) {
+                noPrintDiv.style.display = 'none';
+            }
+            
+            // Get the HTML content
+            const htmlContent = document.documentElement.outerHTML;
+            
+            // Create blob with Word MIME type
+            const blob = new Blob([htmlContent], {
+                type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+            });
+            
+            // Create download link
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'Nike_Web_Development_Lab_Manual.doc';
+            link.click();
+            
+            // Restore the no-print div
+            if (noPrintDiv) {
+                noPrintDiv.style.display = 'block';
+            }
+        }
+        
+        // Add print styles dynamically
+        window.addEventListener('beforeprint', function() {
+            document.body.style.fontSize = '12pt';
+            document.body.style.lineHeight = '1.4';
+        });
+        
+        window.addEventListener('afterprint', function() {
+            document.body.style.fontSize = '';
+            document.body.style.lineHeight = '';
+        });
+    </script>
+</body>
+</html>
