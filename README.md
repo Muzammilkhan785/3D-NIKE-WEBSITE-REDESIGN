@@ -21,7 +21,7 @@ We welcome contributions! Please feel free to submit a pull request.
 This project is licensed under the MIT License.  
 
 ## Contact 📬  
-For any inquiries, please reach out to [your-email@example.com].  
+For any inquiries, please reach out to devmuzammil@gmail.com  
 
 ---  
 
